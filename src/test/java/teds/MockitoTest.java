@@ -27,10 +27,7 @@ import org.junit.jupiter.api.Test;
 class MockitoTest {
 	
 	private Carro carro;
-	
-	@Mock
-	private List<Acessorio> listaacessorio;
-	
+		
 	@Mock
 	private Acessorio acessorio;
 	@Mock
@@ -38,20 +35,15 @@ class MockitoTest {
 
 	@Test
 	void test() {
-		// Primeiro Acessorio
-		acessorio.setCodigo(123);
-		acessorio.setDescricao("volante");
-		acessorio.setValor(50);
-		listaacessorio.add(acessorio);
-		
-		acessorio2.setCodigo(321);
-		acessorio2.setDescricao("banco");
-		acessorio2.setValor(200);
-		listaacessorio.add(acessorio2);
-		
-		carro.setAcessorios(listaacessorio);
-		
 		carro.setValorBaseDiaria(500);
+		
+		acessorio.setValor(50);
+		carro.getAcessorios().add(acessorio);
+				
+		acessorio2.setValor(200);
+		carro.getAcessorios().add(acessorio2);
+				
+		
 		
 		assertEquals(carro.getValorAPagar(), 750);
 			

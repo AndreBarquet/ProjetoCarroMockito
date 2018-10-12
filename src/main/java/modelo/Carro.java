@@ -68,6 +68,7 @@ public class Carro {
         this.acessorios = acessorios;
     }
     
+    
     public double getValorAPagar() {
     	double valor = 0.0;
     	for (Acessorio a : acessorios) {
